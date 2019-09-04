@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "963404641602",
+    "firebase_url": "https://mobidine-8cd8d.firebaseio.com",
+    "project_id": "mobidine-8cd8d",
+    "storage_bucket": "mobidine-8cd8d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:963404641602:android:cbac0e1154f80770",
+        "android_client_info": {
+          "package_name": "com.example.mobidine"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "963404641602-e0rpudpouo52qu3qb01rke386hmso0qt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mobidine",
+            "certificate_hash": "f1f864df726e4422f797e34dfc1125b1328896f1"
+          }
+        },
+        {
+          "client_id": "963404641602-mbrge6f1cbprgmqhj1ib6kcg04p16ibj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4xMHd5PN4O2DN_rMr6R9rhI7ztQ7Zyo0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "963404641602-mbrge6f1cbprgmqhj1ib6kcg04p16ibj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
