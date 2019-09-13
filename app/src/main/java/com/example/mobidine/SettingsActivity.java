@@ -124,7 +124,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         ref.child(Prevalent.currentonlineUser.getPhone()).updateChildren(userMap);
 
-        startActivity(new Intent(SettingsActivity.this, MainActivity.class));
+        startActivity(new Intent(SettingsActivity.this, HomeActivity.class));
         Toast.makeText(SettingsActivity.this, "Profile updated successfully..", Toast.LENGTH_SHORT).show();
         finish();
 
