@@ -65,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/Material.Drawable.CheckBox"
-        android:text="Remember Me"
+        android:text="@string/remember_me"
         android:textColor="@color/colorPrimaryDark"
         app:buttonTint="@color/colorPrimaryDark"
         android:gravity="center_vertical"
@@ -73,7 +73,7 @@
         android:textStyle="bold"
         android:layout_marginLeft="17dp"
 
-        />
+        android:layout_marginStart="17dp" />
 
      <TextView
          android:id="@+id/forget_password_link"
