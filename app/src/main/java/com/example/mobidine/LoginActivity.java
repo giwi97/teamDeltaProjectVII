@@ -152,15 +152,16 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, "Admin Successfully logged-in..", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
 
-                                Intent intent = new Intent(LoginActivity.this, AdminNewItemsActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, AdminCategoryActivity.class);
                                 startActivity(intent);
 
                             }else if(parentDbName.equals("Users")){
 
-                                Toast.makeText(LoginActivity.this, "Successfully logged-in..", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Successfully logged-in...", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
 
                                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                Prevalent.currentonlineUser = usersData;
                                 startActivity(intent);
 
                             }
