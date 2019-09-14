@@ -69,8 +69,10 @@ public class HomeActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+                Intent intent = new Intent(HomeActivity.this, CartActivity.class);
+                startActivity(intent);
+
             }
         });
 
@@ -127,13 +129,26 @@ public class HomeActivity extends AppCompatActivity
                     }
 
                     @Override
-                    protected void onBindViewHolder(@NonNull ProductViewHolder productViewHolder, int i, @NonNull Products products) {
+                    protected void onBindViewHolder(@NonNull ProductViewHolder productViewHolder, int i, @NonNull final Products products) {
 
                         productViewHolder.txtProductName.setText(products.getName());
                         productViewHolder.txtProductDescription.setText(products.getDescription());
                         productViewHolder.txtProductPrice.setText("Price:"+products.getPrice()+"LKR");
                         Picasso.get().load(products.getImage()).into(productViewHolder.imageView);
 
+
+                        //onclick navigate and display relevant product details
+                        //getting unique id of added product
+
+                        productViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+
+                                Intent intent = new Intent(HomeActivity.this, ProductDetailsActivity.class);
+                                intent.putExtra("pid", products.getPid());
+                                startActivity(intent);
+                            }
+                        });
 
 
                     }
@@ -193,6 +208,9 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_cart) {
+
+            Intent intent = new Intent(HomeActivity.this, CartActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_orders) {
 
