@@ -82,12 +82,26 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/maintain_btn"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_above="@+id/check_orders_btn"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Edit Products"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:textAllCaps="false"/>
+
 
 
     <Button
         android:id="@+id/check_orders_btn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="42dp"
         android:layout_above="@+id/admin_logout_btn"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -101,7 +115,7 @@
     <Button
         android:id="@+id/admin_logout_btn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="42dp"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -111,6 +125,8 @@
         android:textColor="@android:color/white"
         android:textSize="20dp"
         android:textAllCaps="false"/>
+
+
 
 
 
