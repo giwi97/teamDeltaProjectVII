@@ -26,12 +26,15 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.security.PrivateKey;
+
 public class CartActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private  RecyclerView.LayoutManager layoutManager;
     private Button NextProcessBtn;
     private TextView txtTotalAmount;
+    private int overTotalPrice = 0;
 
 
     @Override
@@ -46,6 +49,21 @@ public class CartActivity extends AppCompatActivity {
 
         NextProcessBtn = (Button) findViewById(R.id.next_process_btn);
         txtTotalAmount = (TextView) findViewById(R.id.total_price);
+
+
+        NextProcessBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                txtTotalAmount.setText("Total Price:"+String.valueOf(overTotalPrice)+"LKR");
+
+                Intent intent = new Intent(CartActivity.this, ConfirmFinalOrderActivity.class);
+                intent.putExtra("Total Price", String.valueOf(overTotalPrice));
+                startActivity(intent);
+                finish();
+
+            }
+        });
     }
 
 
@@ -69,6 +87,9 @@ public class CartActivity extends AppCompatActivity {
                 cartViewHolder.txtProductPrice.setText("Price"+cart.getPrice()+"LKR");
                 cartViewHolder.txtProductName.setText(cart.getName());
 
+
+                int oneProductTotalPrice = ((Integer.valueOf(cart.getPrice()))) * ((Integer.valueOf(cart.getQuantity())));
+                overTotalPrice = overTotalPrice + oneProductTotalPrice;
 
                 cartViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
