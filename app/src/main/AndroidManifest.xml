@@ -12,7 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AdminMaintainProductsActivity"></activity>
+        <activity android:name=".AdminCheckNewProductsActivity"></activity>
+        <activity android:name=".AdminHomeActivity" />
+        <activity android:name=".Seller.SellerProfileActivity" />
+        <activity
+            android:name=".Seller.SellerHomeActivity"
+            android:label="@string/title_activity_seller_home" />
+        <activity android:name=".Seller.SellerLoginActivity" />
+        <activity android:name=".Seller.SellerRegistrationActivity" />
+        <activity android:name=".AdminMaintainProductsActivity" />
         <activity android:name=".SearchProductsActivity" />
         <activity android:name=".AdminUserProductsActivity" />
         <activity android:name=".AdminNewOrdersActivity" />
@@ -27,8 +35,8 @@
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
-        <activity android:name=".AdminCategoryActivity" />
-        <activity android:name=".AdminNewItemsActivity" />
+        <activity android:name=".Seller.SellerProductCategoryActivity" />
+        <activity android:name=".Seller.SellerAddNewProductActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity">

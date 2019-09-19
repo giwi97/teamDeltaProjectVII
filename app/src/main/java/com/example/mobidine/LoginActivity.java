@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mobidine.Seller.SellerProductCategoryActivity;
 import com.rey.material.widget.CheckBox;
 import com.example.mobidine.Model.Users;
 import com.example.mobidine.Prevalent.Prevalent;
@@ -152,7 +153,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, "Admin Successfully logged-in..", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
 
-                                Intent intent = new Intent(LoginActivity.this, AdminCategoryActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, AdminHomeActivity.class);
                                 startActivity(intent);
 
                             }else if(parentDbName.equals("Users")){

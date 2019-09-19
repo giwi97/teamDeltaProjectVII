@@ -9,10 +9,15 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mobidine.Model.Users;
 import com.example.mobidine.Prevalent.Prevalent;
+import com.example.mobidine.Seller.SellerHomeActivity;
+import com.example.mobidine.Seller.SellerRegistrationActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button signUpButton, loginButton;
     private ProgressDialog loadingBar;
+    private TextView sellerBegin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         signUpButton = (Button) findViewById(R.id.main_signup_btn);
         loginButton = (Button) findViewById(R.id.main_login_btn);
+        sellerBegin = (TextView) findViewById(R.id.seller_begin);
         loadingBar = new ProgressDialog(this);
 
         Paper.init(this);
@@ -62,6 +69,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        sellerBegin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, SellerRegistrationActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
         String UserPhoneKey = Paper.book().read(Prevalent.UserPhoneKey);
         String UserPasswordKey = Paper.book().read(Prevalent.UserPasswordKey);
 
@@ -83,6 +100,23 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        if(firebaseUser != null){
+
+            Intent intent = new Intent(MainActivity.this, SellerHomeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            finish();
+
+        }
 
     }
 

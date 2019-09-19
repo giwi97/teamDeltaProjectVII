@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.mobidine.Seller.SellerProductCategoryActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -84,7 +85,7 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
 
                 Toast.makeText(AdminMaintainProductsActivity.this, "Successfully delete", Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(AdminMaintainProductsActivity.this, AdminCategoryActivity.class);
+                Intent intent = new Intent(AdminMaintainProductsActivity.this, SellerProductCategoryActivity.class);
                 startActivity(intent);
                 finish();
 
@@ -132,7 +133,7 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
 
                                 Toast.makeText(AdminMaintainProductsActivity.this, "Changes applied successfully", Toast.LENGTH_SHORT).show();
 
-                                Intent intent = new Intent(AdminMaintainProductsActivity.this, AdminCategoryActivity.class);
+                                Intent intent = new Intent(AdminMaintainProductsActivity.this, SellerProductCategoryActivity.class);
                                 startActivity(intent);
                                 finish();
                             }
